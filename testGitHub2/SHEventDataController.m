@@ -55,13 +55,9 @@
     //////////////////////////////////////////////////
     
     NSCalendar *calendar = [NSCalendar currentCalendar];
-    
-    unsigned unitFlags = NSYearCalendarUnit | NSMonthCalendarUnit |  NSDayCalendarUnit | NSHourCalendarUnit | NSMinuteCalendarUnit | NSSecondCalendarUnit;
+    NSCalendarUnit unitFlags = NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit;
     NSDateComponents *dateComponents = [calendar components:unitFlags fromDate:[NSDate date]];
     dateComponents.year -= 1;
-    dateComponents.hour = 0;
-    dateComponents.minute = 0;
-    dateComponents.second = 0;
     
     //当日0:00の1年前
     NSDate *dateStart = [calendar dateFromComponents:dateComponents];
