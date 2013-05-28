@@ -46,6 +46,12 @@
             default:
                 break;
         }
+        
+    } else {
+        
+        NSLog(@"iOS 6.0未満");
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"Authorized" object:nil];
+        
     }
 }
 
@@ -58,9 +64,9 @@
     NSCalendar *calendar = [NSCalendar currentCalendar];
     NSCalendarUnit unitFlags = NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit;
     NSDateComponents *dateComponents = [calendar components:unitFlags fromDate:[NSDate date]];
-    dateComponents.year -= 1;
     
     //当日0:00の1年前
+    dateComponents.year -= 1;
     NSDate *dateStart = [calendar dateFromComponents:dateComponents];
     NSLog(@"startDate:%@", dateStart.description);
     
