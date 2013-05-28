@@ -16,7 +16,7 @@
 		5E4EA7AD17544B1F00898728 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E4EA7AC17544B1F00898728 /* Default.png */; };
 		5E4EA7AF17544B1F00898728 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E4EA7AE17544B1F00898728 /* Default@2x.png */; };
 		5E4EA7B117544B1F00898728 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E4EA7B017544B1F00898728 /* Default-568h@2x.png */; };
-		5E6A5F9C175476FE0080B151 /* SHTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E6A5F9B175476FE0080B151 /* SHTableViewController.m */; };
+		5E6A5F9C175476FE0080B151 /* SHEventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E6A5F9B175476FE0080B151 /* SHEventViewController.m */; };
 		5E6A5F9F1754834D0080B151 /* SHEventDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E6A5F9E1754834D0080B151 /* SHEventDataController.m */; };
 /* End PBXBuildFile section */
 
@@ -34,8 +34,8 @@
 		5E4EA7AC17544B1F00898728 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		5E4EA7AE17544B1F00898728 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		5E4EA7B017544B1F00898728 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		5E6A5F9A175476FE0080B151 /* SHTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHTableViewController.h; sourceTree = "<group>"; };
-		5E6A5F9B175476FE0080B151 /* SHTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHTableViewController.m; sourceTree = "<group>"; };
+		5E6A5F9A175476FE0080B151 /* SHEventViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHEventViewController.h; sourceTree = "<group>"; };
+		5E6A5F9B175476FE0080B151 /* SHEventViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHEventViewController.m; sourceTree = "<group>"; };
 		5E6A5F9D1754834D0080B151 /* SHEventDataController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHEventDataController.h; sourceTree = "<group>"; };
 		5E6A5F9E1754834D0080B151 /* SHEventDataController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHEventDataController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -84,8 +84,8 @@
 		5E4EA7A017544B1F00898728 /* testGitHub2 */ = {
 			isa = PBXGroup;
 			children = (
-				5E6A5F9A175476FE0080B151 /* SHTableViewController.h */,
-				5E6A5F9B175476FE0080B151 /* SHTableViewController.m */,
+				5E6A5F9A175476FE0080B151 /* SHEventViewController.h */,
+				5E6A5F9B175476FE0080B151 /* SHEventViewController.m */,
 				5E4EA7A917544B1F00898728 /* SHAppDelegate.h */,
 				5E4EA7AA17544B1F00898728 /* SHAppDelegate.m */,
 				5E4EA7A117544B1F00898728 /* Supporting Files */,
@@ -177,7 +177,7 @@
 			files = (
 				5E4EA7A717544B1F00898728 /* main.m in Sources */,
 				5E4EA7AB17544B1F00898728 /* SHAppDelegate.m in Sources */,
-				5E6A5F9C175476FE0080B151 /* SHTableViewController.m in Sources */,
+				5E6A5F9C175476FE0080B151 /* SHEventViewController.m in Sources */,
 				5E6A5F9F1754834D0080B151 /* SHEventDataController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

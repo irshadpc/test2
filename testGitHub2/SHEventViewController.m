@@ -1,18 +1,18 @@
 //
-//  SHTableViewController.m
+//  SHEventViewController.m
 //  testGitHub2
 //
-//  Created by sat on 2013/05/28.
+//  Created by sathachie on 2013/05/28.
 //  Copyright (c) 2013年 SH. All rights reserved.
 //
 
-#import "SHTableViewController.h"
+#import "SHEventViewController.h"
 
-@interface SHTableViewController ()
+@interface SHEventViewController ()
 
 @end
 
-@implementation SHTableViewController
+@implementation SHEventViewController
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
