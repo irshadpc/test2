@@ -7,7 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <EventKit/EventKit.h>
 
 @interface SHEventDataController : NSObject
+
++ (void)requestAccess:(EKEventStore *)eventStore;
++ (NSArray *)allEvent:(EKEventStore *)eventStore;
 
 @end

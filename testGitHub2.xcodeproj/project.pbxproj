@@ -18,6 +18,7 @@
 		5E4EA7B117544B1F00898728 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E4EA7B017544B1F00898728 /* Default-568h@2x.png */; };
 		5E6A5F9C175476FE0080B151 /* SHEventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E6A5F9B175476FE0080B151 /* SHEventViewController.m */; };
 		5E6A5F9F1754834D0080B151 /* SHEventDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E6A5F9E1754834D0080B151 /* SHEventDataController.m */; };
+		5E6A5FA11754A15C0080B151 /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E6A5FA01754A15C0080B151 /* EventKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		5E6A5F9B175476FE0080B151 /* SHEventViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHEventViewController.m; sourceTree = "<group>"; };
 		5E6A5F9D1754834D0080B151 /* SHEventDataController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHEventDataController.h; sourceTree = "<group>"; };
 		5E6A5F9E1754834D0080B151 /* SHEventDataController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHEventDataController.m; sourceTree = "<group>"; };
+		5E6A5FA01754A15C0080B151 /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +47,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E6A5FA11754A15C0080B151 /* EventKit.framework in Frameworks */,
 				5E4EA79B17544B1F00898728 /* UIKit.framework in Frameworks */,
 				5E4EA79D17544B1F00898728 /* Foundation.framework in Frameworks */,
 				5E4EA79F17544B1F00898728 /* CoreGraphics.framework in Frameworks */,
@@ -57,6 +60,7 @@
 		5E4EA78E17544B1F00898728 = {
 			isa = PBXGroup;
 			children = (
+				5E6A5FA01754A15C0080B151 /* EventKit.framework */,
 				5E4EA7A017544B1F00898728 /* testGitHub2 */,
 				5E4EA79917544B1F00898728 /* Frameworks */,
 				5E4EA79817544B1F00898728 /* Products */,
@@ -258,6 +262,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "testGitHub2/testGitHub2-Prefix.pch";
 				INFOPLIST_FILE = "testGitHub2/testGitHub2-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -269,6 +274,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "testGitHub2/testGitHub2-Prefix.pch";
 				INFOPLIST_FILE = "testGitHub2/testGitHub2-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
