@@ -9,10 +9,9 @@
 #import "SHEventViewController.h"
 #import "SHEventDataController.h"
 
-@interface SHEventViewController () {
-    EKEventStore *eventStore_;
-    NSMutableArray *arrayEvent_;
-}
+@interface SHEventViewController ()
+    @property (strong, nonatomic) EKEventStore *eventStore;
+    @property (strong, nonatomic) NSMutableArray *arrayEvent;
 
 @end
 
@@ -31,8 +30,8 @@
 {
     [super viewDidLoad];
     
-    if (eventStore_ == nil)
-        eventStore_ = [[EKEventStore alloc] init];
+    if (self.eventStore == nil)
+        self.eventStore = [[EKEventStore alloc] init];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(authorized:) name:@"Authorized" object:nil];
     
@@ -40,7 +39,8 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    [SHEventDataController requestAccess:eventStore_];
+    [super viewWillAppear:animated];
+    [SHEventDataController requestAccess:self.eventStore];
 }
 
 - (void)didReceiveMemoryWarning
@@ -57,7 +57,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return arrayEvent_.count;
+    return self.arrayEvent.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -69,7 +69,7 @@
     if (cell == nil)
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
     
-    EKEvent *event = arrayEvent_[indexPath.row];
+    EKEvent *event = self.arrayEvent[indexPath.row];
     cell.textLabel.text = event.title;
     cell.detailTextLabel.text = [NSDateFormatter localizedStringFromDate:event.startDate dateStyle:NSDateFormatterLongStyle timeStyle:NSDateFormatterShortStyle];
     
@@ -87,11 +87,15 @@
 
 - (void)authorized:(NSNotification *)notification
 {
+    //////////////////////////////////////////////////
+    // アクセス権の付与後に実行
+    //////////////////////////////////////////////////
+    
     dispatch_queue_t sub_queue_ = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
     
     dispatch_async(sub_queue_, ^{
         
-        arrayEvent_ = [NSMutableArray arrayWithArray:[SHEventDataController allEvent:eventStore_]];
+        self.arrayEvent = [NSMutableArray arrayWithArray:[SHEventDataController allEvent:self.eventStore]];
         
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.tableView reloadData];
