@@ -36,6 +36,7 @@
                 
             case EKAuthorizationStatusAuthorized:
                 NSLog(@"許可済み");
+                [[NSNotificationCenter defaultCenter] postNotificationName:@"Authorized" object:nil];
                 break;
                 
             case EKAuthorizationStatusRestricted:

@@ -34,16 +34,13 @@
     if (eventStore_ == nil)
         eventStore_ = [[EKEventStore alloc] init];
     
-    dispatch_queue_t sub_queue_ = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(authorized:) name:@"Authorized" object:nil];
     
-    dispatch_async(sub_queue_, ^{
-        
-        arrayEvent_ = [NSMutableArray arrayWithArray:[SHEventDataController allEvent:eventStore_]];
-        
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [self.tableView reloadData];
-        });
-    });
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [SHEventDataController requestAccess:eventStore_];
 }
 
 - (void)didReceiveMemoryWarning
@@ -84,6 +81,22 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
+
+#pragma mark - Notification
+
+- (void)authorized:(NSNotification *)notification
+{
+    dispatch_queue_t sub_queue_ = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    
+    dispatch_async(sub_queue_, ^{
+        
+        arrayEvent_ = [NSMutableArray arrayWithArray:[SHEventDataController allEvent:eventStore_]];
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.tableView reloadData];
+        });
+    });
 }
 
 @end
